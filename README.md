@@ -4,7 +4,7 @@
 > Updated for 2019 by Chris Sprance (twitter.com/csprance)
 > Published under GPLv2 license
 
-
+![Example](https://csprance.com/shots/2019-12-27_e24433b4-a471-46ba-b517-49674742212a.gif)
 # HELLO!
 
 Nice that you decided to try the plugin.
