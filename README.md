@@ -1,10 +1,11 @@
-# This is a part of Graph Auto-Layout plugin for Substance Designer
-# Copyright (C) 2018 Alex Zotikov (twitter.com/z_fighting)
-# Updated for 2019 by Chris Sprance (twitter.com/csprance)
-# Published under GPLv2 license
+# Substance Designer Graph Auto-Layout
+> This is a part of Graph Auto-Layout plugin for Substance Designer
+> Copyright (C) 2018 Alex Zotikov (twitter.com/z_fighting)
+> Updated for 2019 by Chris Sprance (twitter.com/csprance)
+> Published under GPLv2 license
 
 
-# =================================== HELLO! =================================== #
+# HELLO!
 
 Nice that you decided to try the plugin.
 Graph Auto-Layout plugin will try to transform your creative Substance Designer spaghetti graph
@@ -13,16 +14,16 @@ So please, use this tool carefully as a helper to organize your work structure.
 I hope, it will save you some time.
 
 
-# ================================ INSTALLATION ================================ #
+# INSTALLATION
 
 Currently supported versions:
-2018.2
-2018.3
-2019
+* 2018.2
+* 2018.3
+* 2019
 
 The easiest way to install the plugin is to copy the current folder to 
 the default plugins directory:
-C:\Users\%USERNAME%\Documents\Allegorithmic\Substance Designer\python\sduserplugins
+`C:\Users\%USERNAME%\Documents\Allegorithmic\Substance Designer\python\sduserplugins`
 
 If you already have your custom project in Substance Designer, copy the folder to 
 any of your 4P (Project Python Plugin Paths)
@@ -30,7 +31,7 @@ Read about project settings here:
 https://support.allegorithmic.com/documentation/sddoc/add-custom-plugins-library-172818881.html
 
 
-# =================================== USAGE ==================================== #
+# USAGE
 
 Once installed, plugin will add an Auto-Layout button to all your graph editors.
 Also it will register an 'L' shortcut to use by default.
@@ -44,13 +45,13 @@ There are several ways to use the tool:
 Just try it! You always have Ctrl+Z.
 
 
-# ================================== SETTINGS ================================== #
+# SETTINGS
 
 Settings for the tool (like shortcut or distance between the nodes) can be changed
 in the settings.py file.
 
 
-# =================================== CREDITS ================================== #
+# CREDITS
 
 This plugin was created by Alex Zotikov.
 If you have any questions, issues or suggestions, send me a message in twitter:
