@@ -1,29 +1,35 @@
 # Substance Designer Graph Auto-Layout
 > This is a part of Graph Auto-Layout plugin for Substance Designer
+
 > Copyright (C) 2018 Alex Zotikov (twitter.com/z_fighting)
+
 > Updated for 2019 by Chris Sprance (twitter.com/csprance)
+
 > Published under GPLv2 license
 
 ![Example](https://csprance.com/shots/2019-12-27_e24433b4-a471-46ba-b517-49674742212a.gif)
 # HELLO!
 
 Nice that you decided to try the plugin.
+
 Graph Auto-Layout plugin will try to transform your creative Substance Designer spaghetti graph
 into something aligned and perfect, but at the same moment cold and faceless.
+
 So please, use this tool carefully as a helper to organize your work structure.
+
 I hope, it will save you some time.
 
 
 # INSTALLATION
 
+The easiest way to install the plugin is to copy the current folder to 
+the default plugins directory:
+`C:\Users\%USERNAME%\Documents\Allegorithmic\Substance Designer\python\sduserplugins`
+
 Currently supported versions:
 * 2018.2
 * 2018.3
 * 2019
-
-The easiest way to install the plugin is to copy the current folder to 
-the default plugins directory:
-`C:\Users\%USERNAME%\Documents\Allegorithmic\Substance Designer\python\sduserplugins`
 
 If you already have your custom project in Substance Designer, copy the folder to 
 any of your 4P (Project Python Plugin Paths)
