@@ -1,16 +1,8 @@
 # Substance Designer Graph Auto-Layout
-> This is a part of Graph Auto-Layout plugin for Substance Designer
-
-> Copyright (C) 2018 Alex Zotikov (twitter.com/z_fighting)
-
-> Updated for 2019 by Chris Sprance (twitter.com/csprance)
-
-> Published under GPLv2 license
+> Graph Auto-Layout plugin for Substance Designer
 
 ![Example](https://csprance.com/shots/2019-12-27_e24433b4-a471-46ba-b517-49674742212a.gif)
 # HELLO!
-
-Nice that you decided to try the plugin.
 
 Graph Auto-Layout plugin will try to transform your creative Substance Designer spaghetti graph
 into something aligned and perfect, but at the same moment cold and faceless.
@@ -27,14 +19,14 @@ the default plugins directory:
 `C:\Users\%USERNAME%\Documents\Allegorithmic\Substance Designer\python\sduserplugins`
 
 Currently supported versions:
-* 2018.2
-* 2018.3
 * 2019
+* 2018.3
+* 2018.2
+
 
 If you already have your custom project in Substance Designer, copy the folder to 
 any of your 4P (Project Python Plugin Paths)
-Read about project settings here: 
-https://support.allegorithmic.com/documentation/sddoc/add-custom-plugins-library-172818881.html
+Read about project settings [here](https://support.allegorithmic.com/documentation/sddoc/add-custom-plugins-library-172818881.html)
 
 
 # USAGE
@@ -51,13 +43,19 @@ There are several ways to use the tool:
 Just try it! You always have Ctrl+Z.
 
 
-# SETTINGS
+# Settings
 
 Settings for the tool (like shortcut or distance between the nodes) can be changed
 in the settings.py file.
 
 
-# CREDITS
+# License
+* Copyright (C) 2018 Alex Zotikov (twitter.com/z_fighting)
+* Updated for 2019 by Chris Sprance (twitter.com/csprance)
+* Published under GPLv2 license
+
+
+# Credits
 
 This plugin was created by Alex Zotikov.
 If you have any questions, issues or suggestions, send me a message in twitter:
