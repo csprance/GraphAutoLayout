@@ -15,8 +15,8 @@ import sys
 sys.path.append(os.path.dirname(__file__))
 
 import sd
-import sdplugins
 from sd.api import sdproperty
+from sd.api.sdhistoryutils import SDHistoryUtils
 try:
     # 2018.2 API
     from sd.api.sdvalue import float2
@@ -42,36 +42,37 @@ uiMgr = app.getQtForPythonUIMgr()
 
 class AutoNodeLayout(object):
     def run(self):
-        selected_nodes = uiMgr.getCurrentGraphSelection()
-        hierarchy = NodesHierarchy(ctx, selected_nodes)
-        vertexes = [Vertex(data) for data in range(len(hierarchy.nodes))]
-        nodesConnections = hierarchy.getEdges()
-        edges = [Edge(vertexes[vertex], vertexes[w]) for (vertex, w) in nodesConnections]
-        graph = SubstanceGraph(vertexes, edges)
+        with SDHistoryUtils.UndoGroup("Auto-Format Layout"):
+            selected_nodes = uiMgr.getCurrentGraphSelection()
+            hierarchy = NodesHierarchy(ctx, selected_nodes)
+            vertexes = [Vertex(data) for data in range(len(hierarchy.nodes))]
+            nodesConnections = hierarchy.getEdges()
+            edges = [Edge(vertexes[vertex], vertexes[w]) for (vertex, w) in nodesConnections]
+            graph = SubstanceGraph(vertexes, edges)
 
-        for vertex in vertexes:
-            vertex.view = VertexView(hierarchy.nodes[vertex.data])
-        # For each separate graph
-        for subGraph in range(len(graph.C)):
-            center = graph.getSubgraphCenter(subGraph)
+            for vertex in vertexes:
+                vertex.view = VertexView(hierarchy.nodes[vertex.data])
+            # For each separate graph
+            for subGraph in range(len(graph.C)):
+                center = graph.getSubgraphCenter(subGraph)
 
-            sug = SugiyamaLayout(graph.C[subGraph])
-            # Vertexes without input edges
-            roots = list(filter(lambda x: len(x.e_in()) == 0, graph.C[subGraph].sV))
-            sug.init_all(roots=roots)
-            sug.draw()
+                sug = SugiyamaLayout(graph.C[subGraph])
+                # Vertexes without input edges
+                roots = list(filter(lambda x: len(x.e_in()) == 0, graph.C[subGraph].sV))
+                sug.init_all(roots=roots)
+                sug.draw()
 
-            newCenter = graph.getSubgraphCenter(subGraph)
-            if len(selected_nodes) == 1:
-                # Offset everything to save the selected node initial position
-                rootPosition = hierarchy.nodes[roots[0].data].getPosition()
-                # Have to compensate the final root node offset
-                offset = float2(rootPosition[1] - roots[0].view.xy[0], -rootPosition[0] - roots[0].view.xy[1])
-            else:
-                offset = float2(center[0] - newCenter[0], center[1] - newCenter[1])
+                newCenter = graph.getSubgraphCenter(subGraph)
+                if len(selected_nodes) == 1:
+                    # Offset everything to save the selected node initial position
+                    rootPosition = hierarchy.nodes[roots[0].data].getPosition()
+                    # Have to compensate the final root node offset
+                    offset = float2(rootPosition[1] - roots[0].view.xy[0], -rootPosition[0] - roots[0].view.xy[1])
+                else:
+                    offset = float2(center[0] - newCenter[0], center[1] - newCenter[1])
 
-            for i, vertex in enumerate(graph.C[subGraph].sV):
-                vertex.view.node.setPosition(float2(-vertex.view.xy[1] - offset[1], vertex.view.xy[0] + offset[0]))
+                for i, vertex in enumerate(graph.C[subGraph].sV):
+                    vertex.view.node.setPosition(float2(-vertex.view.xy[1] - offset[1], vertex.view.xy[0] + offset[0]))
 
 
 class VertexView(object):
